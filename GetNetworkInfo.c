@@ -76,7 +76,6 @@ int GetMacAddress(/*in*/ char* ipStr, /*out*/ BYTE* mac)
     fp = popen(command, "r");
     if (fp && fread(data, 17, 1, fp) > 0)
     {
-        printf("%s\n", data);
         mac[0] = ConvertStrToByte(data[0], data[1]);
         mac[1] = ConvertStrToByte(data[3], data[4]);
         mac[2] = ConvertStrToByte(data[6], data[7]);
